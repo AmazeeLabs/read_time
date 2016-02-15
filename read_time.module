@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Displays the time it will take to read content on your site.
@@ -164,7 +165,7 @@ function read_time_calculate($node) {
       $hour_format = format_plural($hours, '1 ' . $hour_suffix, '@count ' . $hour_suffix . 's');
       $read_time = format_string('@h, @m', array(
         '@h' => $hour_format,
-        '@m' => $minute_format
+        '@m' => $minute_format,
       ));
     }
     else {
