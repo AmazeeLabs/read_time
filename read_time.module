@@ -177,7 +177,7 @@ function read_time_calculate($node) {
   $fields = variable_get('read_time_fields_' . $node->type, $defaults['fields']);
   $wpm = variable_get('read_time_wpm_' . $node->type, $defaults['wpm']);
   $format = variable_get('read_time_format_' . $node->type, $defaults['format']);
-  $display = variable_get('read_time_display_' . $node->type, $defaults['display']);
+  $display = t(variable_get('read_time_display_' . $node->type, $defaults['display']));
 
   // Get fields to calculate read time of.
   $field_words = '';
