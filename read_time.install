@@ -5,30 +5,12 @@
  */
 
 /**
- * Implements read_time_schema().
+ * Implements hook_update_N
  */
-function read_time_schema() {
-  return array(
-    'read_time' => array(
-      'description' => 'The calculated read times of nodes.',
-      'fields' => array(
-        'nid' => array(
-          'description' => 'The {node}.nid of the node.',
-          'type' => 'int',
-          'not null' => TRUE,
-          'unsigned' => TRUE,
-        ),
-        'read_time' => array(
-          'description' => 'The calculated and formatted read time of the node.',
-          'type' => 'varchar',
-          'not null' => TRUE,
-          'default' => '',
-          'length' => 255,
-        ),
-      ),
-      'primary key' => array('nid'),
-    ),
-  );
+function read_time_update_7100() {
+  if (db_table_exists('read_time')) {
+    db_drop_table('read_time');
+  }
 }
 
 /**
